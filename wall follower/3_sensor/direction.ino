@@ -1,7 +1,6 @@
 //--------------------------------- direction control ---------------------------------//
 
 void setDirection(int dir) {
-
   if ( dir == FORWARD ) {
     digitalWrite(en1, LOW);   // Left wheel forward
     digitalWrite(en2, HIGH);

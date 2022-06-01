@@ -21,6 +21,5 @@ void ReadSensors() {
   oldLeftSensor = leftSensor; // save old readings for movment
   oldRightSensor = rightSensor;
   oldFrontSensor = frontSensor;
-
 }
 //---------------------------------------------------------------------------//

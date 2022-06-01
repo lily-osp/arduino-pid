@@ -12,9 +12,7 @@ void PID( boolean left ) {
     float errorP = leftSensor - rightSensor - offset ;
     float errorD = errorP - oldErrorP;
     float errorI = (2.0 / 3) * errorI + errorP ;
-
     totalError = P * errorP + D * errorD + I * errorI ;
-
     oldErrorP = errorP ;
 
     RMS = baseSpeed + totalError ;
@@ -45,9 +43,7 @@ void PID( boolean left ) {
     float errorP = leftSensor - rightSensor + offset ;
     float errorD = errorP - oldErrorP;
     float errorI = (2.0 / 3) * errorI + errorP ;
-
     totalError = P * errorP + D * errorD + I * errorI ;
-
     oldErrorP = errorP ;
 
     RMS = baseSpeed + totalError ;
