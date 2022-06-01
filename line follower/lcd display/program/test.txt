@@ -1,0 +1,3 @@
+test 1 = test motor
+test 2 = test sensor
+test 3 = test lcd & button
