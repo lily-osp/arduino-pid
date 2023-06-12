@@ -69,3 +69,29 @@ Pada fungsi loop(), dilakukan beberapa hal seperti:
 ## Penutup
 
 Demikianlah program kontrol motor DC dengan PID pada Arduino. Program ini dapat dimodifikasi dan disesuaikan dengan kebutuhan pengguna. Semoga bermanfaat!
+
+## Flowcharts 
+
+```mermaid 
+graph TD
+A[Memulai] --> B[Inisialisasi LCD dan PID]
+B --> C[Pengaturan mode pin dan komunikasi serial]
+C --> D[Atur Setpoint dan mode PID]
+D --> E[Set previousMillis ke waktu saat ini]
+E --> F{Waktu saat ini - previousMillis >= interval?}
+F -- Tidak --> E
+F -- Ya --> G[Baca nilai potensiometer]
+G --> H[Konversi nilai potensiometer ke rentang 0-1]
+H --> I[Perbarui konstanta PID]
+I --> J[Baca nilai sensor sebagai Input]
+J --> K[Hitung Output PID]
+K --> L{Output > 0?}
+L -- Ya --> M[Kendalikan motor ke arah depan]
+M --> N[Tampilkan nilai di LCD]
+N --> O[Tampilkan nilai di Serial monitor]
+O --> E
+L -- Tidak --> P[Kendalikan motor ke arah belakang]
+P --> N
+
+```
+
