@@ -54,3 +54,6 @@ This repository is inspired by the works of the Arduino community and various on
 Please refer to the project-specific documentation for any additional acknowledgements or references related to a particular project.
 
 Enjoy exploring the Arduino PID projects and happy coding!
+
+## Note
+![PID Workflow](https://github.com/1999AZZAR/arduino-pid/blob/master/how%20its%20work.png)
