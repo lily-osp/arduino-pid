@@ -55,5 +55,17 @@ Please refer to the project-specific documentation for any additional acknowledg
 
 Enjoy exploring the Arduino PID projects and happy coding!
 
+## Support
+
+You can support me by buy me a coffee if u like to.
+
+<div align="left">
+<!--   <h4>And you can also support me by <a href="https://www.buymeacoffee.com/azzar" target="_blank">buying me coffee</a></h4> -->
+  <a href="https://www.buymeacoffee.com/azzar" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 42px !important;width: 151.9px !important; margin-top: 50px !important;">
+  </a>
+</div>
+
 ## Note
+
 ![PID Workflow](https://github.com/1999AZZAR/arduino-pid/blob/master/how%20its%20work.png)
