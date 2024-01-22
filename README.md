@@ -1,6 +1,6 @@
 # Arduino PID
 
-This repository contains example projects demonstrating the implementation of PID (Proportional-Integral-Derivative) control using Arduino. PID control is a widely used technique in control systems for achieving precise and accurate control of a system's output based on desired setpoints.
+This repository contains example projects demonstrating the implementation of [PID (Proportional-Integral-Derivative)](explanation/what_is_pid.md) control using Arduino. PID control is a widely used technique in control systems for achieving precise and accurate control of a system's output based on desired setpoints.
 
 ## Projects
 
@@ -23,7 +23,8 @@ Each project includes the necessary Arduino code, circuit diagrams, and addition
 To get started with any of the projects, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
-   ```
+
+   ```bash
    git clone https://github.com/1999AZZAR/arduino-pid.git
    ```
 
@@ -64,12 +65,8 @@ Enjoy exploring the Arduino PID projects and happy coding!
 You can support me by buy me a coffee if u like to.
 
 <div align="left">
-<!--   <h4>And you can also support me by <a href="https://www.buymeacoffee.com/azzar" target="_blank">buying me coffee</a></h4> -->
   <a href="https://www.buymeacoffee.com/azzar" target="_blank">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 42px !important;width: 151.9px !important; margin-top: 50px !important;">
   </a>
 </div>
 
-## Note
-
-![PID Workflow](https://github.com/1999AZZAR/arduino-pid/blob/master/how%20its%20work.png)

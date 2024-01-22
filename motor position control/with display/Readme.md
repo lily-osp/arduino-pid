@@ -1,97 +1,75 @@
-# Program Kontrol Motor DC dengan PID
+# PID-Controlled DC Motor Program
 
-Program ini adalah contoh implementasi kontrol motor DC menggunakan PID (Proportional-Integral-Derivative) pada Arduino. Kontrol PID digunakan untuk mengatur kecepatan motor DC berdasarkan nilai input sensor dan nilai setpoint yang ditentukan.
+This program is an example implementation of PID (Proportional-Integral-Derivative) control for a DC motor using Arduino. PID control is employed to regulate the speed of the DC motor based on the input sensor value and a predetermined setpoint.
 
-## Library yang Digunakan
+## Libraries Used
 
-Program ini menggunakan tiga library yaitu:
+This program utilizes three libraries:
 
-- Wire.h untuk komunikasi I2C
+- Wire.h for I2C communication
+- LiquidCrystal_I2C.h for controlling the display on the I2C LCD
+- PID_v1.h for implementing PID control
 
-- LiquidCrystal_I2C.h untuk mengatur tampilan pada LCD I2C
+## Initialization of Variables and Objects
 
-- PID_v1.h untuk mengimplementasikan kontrol PID
+The program uses various variables and objects, including:
 
-## Inisialisasi Variabel dan Objek
-
-Program ini menggunakan beberapa variabel dan objek seperti:
-
-- lcd merupakan objek dari kelas LiquidCrystal_I2C yang digunakan untuk mengatur tampilan pada LCD I2C
-
-- Setpoint, Input, dan Output adalah variabel bertipe data double yang digunakan sebagai nilai setpoint, nilai input sensor, dan nilai output dari PID
-
-- kp, ki, dan kd adalah variabel bertipe data double yang digunakan sebagai konstanta pada kontrol PID
-
-- potPin1, potPin2, potPin3, dan motorPin adalah variabel yang menyimpan nomor pin pada Arduino yang digunakan untuk membaca nilai potensio dan mengatur kecepatan motor DC
-
-- previousMillis dan interval adalah variabel yang digunakan untuk mengatur interval waktu pada program
-
-- myPID adalah objek dari kelas PID yang digunakan untuk menghitung output PID
+- `lcd`: an object of the LiquidCrystal_I2C class used to control the I2C LCD display
+- `Setpoint`, `Input`, and `Output`: double-type variables used as the setpoint, sensor input, and PID output values, respectively
+- `kp`, `ki`, and `kd`: double-type variables serving as constants in the PID control
+- `potPin1`, `potPin2`, `potPin3`, and `motorPin`: variables storing Arduino pin numbers for reading potentiometer values and controlling the DC motor speed
+- `previousMillis` and `interval`: variables used to set the time interval in the program
+- `myPID`: an object of the PID class used to calculate the PID output
 
 ## Setup
 
-Pada fungsi setup(), dilakukan beberapa hal seperti:
+In the `setup()` function, several tasks are performed, such as:
 
-- Mengatur pin motorPin sebagai output
-
-- Membuka serial monitor dengan baud rate 9600
-
-- Inisialisasi objek lcd
-
-- Menghidupkan backlight pada LCD
-
-- Mengatur nilai Setpoint
-
-- Mengatur mode PID ke AUTOMATIC
+- Setting `motorPin` as an output
+- Opening the serial monitor with a baud rate of 9600
+- Initializing the `lcd` object
+- Turning on the backlight on the LCD
+- Setting the Setpoint value
+- Setting the PID mode to AUTOMATIC
 
 ## Loop
 
-Pada fungsi loop(), dilakukan beberapa hal seperti:
+In the `loop()` function, various actions take place, including:
 
-- Membaca waktu saat ini
+- Reading the current time
+- If the specified time interval has elapsed, reading potentiometer values 1, 2, and 3
+- Converting the analog values from the potentiometers to a range of 0-1
+- Updating PID constants with values from the potentiometers
+- Reading sensor values as input
+- Calculating the PID output using the input value, setpoint, and PID constants
+- Controlling the DC motor with the PID output
+- Displaying input, output, and constants on the LCD
+- Displaying input, output, and constants on the serial monitor
 
-- Jika sudah mencapai interval waktu yang ditentukan, maka dilakukan pembacaan nilai potensio ke-1, ke-2, dan ke-3
+## Conclusion
 
-- Konversi nilai analog dari potensio ke range 0-1
+This concludes the PID-controlled DC motor program on Arduino. Feel free to modify and customize the program according to your needs. Hope you find it beneficial!
 
-- Update konstanta PID dengan nilai dari potensio
+## Flowchart
 
-- Membaca nilai sensor sebagai input
-
-- Menghitung output PID dengan menggunakan nilai input, nilai setpoint, dan konstanta PID
-
-- Mengontrol motor DC dengan menggunakan output dari PID
-
-- Menampilkan nilai input, output, dan konstanta pada LCD
-
-- Menampilkan nilai input, output, dan konstanta pada serial monitor
-
-## Penutup
-
-Demikianlah program kontrol motor DC dengan PID pada Arduino. Program ini dapat dimodifikasi dan disesuaikan dengan kebutuhan pengguna. Semoga bermanfaat!
-
-## Flowcharts 
-
-```mermaid 
+```mermaid
 graph TD
-A[Memulai] --> B[Inisialisasi LCD dan PID]
-B --> C[Pengaturan mode pin dan komunikasi serial]
-C --> D[Atur Setpoint dan mode PID]
-D --> E[Set previousMillis ke waktu saat ini]
-E --> F{Waktu saat ini - previousMillis >= interval?}
-F -- Tidak --> E
-F -- Ya --> G[Baca nilai potensiometer]
-G --> H[Konversi nilai potensiometer ke rentang 0-1]
-H --> I[Perbarui konstanta PID]
-I --> J[Baca nilai sensor sebagai Input]
-J --> K[Hitung Output PID]
+A[Start] --> B[Initialize LCD and PID]
+B --> C[Pin mode setup and serial communication]
+C --> D[Set Setpoint and PID mode]
+D --> E[Set previousMillis to current time]
+E --> F{Current time - previousMillis >= interval?}
+F -- No --> E
+F -- Yes --> G[Read potentiometer values]
+G --> H[Convert potentiometer values to the range 0-1]
+H --> I[Update PID constants]
+I --> J[Read sensor value as Input]
+J --> K[Calculate PID Output]
 K --> L{Output > 0?}
-L -- Ya --> M[Kendalikan motor ke arah depan]
-M --> N[Tampilkan nilai di LCD]
-N --> O[Tampilkan nilai di Serial monitor]
+L -- Yes --> M[Control motor forward]
+M --> N[Display values on LCD]
+N --> O[Display values on Serial monitor]
 O --> E
-L -- Tidak --> P[Kendalikan motor ke arah belakang]
+L -- No --> P[Control motor backward]
 P --> N
-
 ```
-
