@@ -12,6 +12,10 @@ The repository includes the following example projects:
 
 3. Wall Follower: The wall follower project showcases how PID control can be utilized to create a robot that follows along the walls of a maze or an environment. The robot adjusts its movements based on the proximity of the walls to maintain a specific distance.
 
+4. [Ball and Tunnel](https://github.com/lily-open-source/PID-controlled-Ultrasonic-Distance-Measurement): contains code for a PID-controlled system that combines an ultrasonic sensor for distance measurement and motor control based on a setpoint. The PID algorithm helps maintain a specified distance from an obstacle by adjusting the motor speed.
+
+5. [temperature controll system with multiple point controll](https://github.com/1999AZZAR/Temperature-Control-System-with-Multiple-DHT11-Sensors-using-ESP8266): contains code for a temperature control system implemented using Arduino and ESP8266 boards. The system utilizes multiple DHT11 sensors to measure temperature and applies PID control to maintain a desired setpoint temperature. The system consists of two components: the master board and the slave board. The master board performs temperature calculation and control, while the slave board collects temperature data from DHT11 sensors. The master and slave boards communicate with each other over Wi-Fi.
+
 Each project includes the necessary Arduino code, circuit diagrams, and additional documentation to help you understand and implement PID control for the specific application.
 
 ## Getting Started
