@@ -1,6 +1,6 @@
 # Arduino PID
 
-This repository contains example projects demonstrating the implementation of [PID (Proportional-Integral-Derivative)](explanation/what_is_pid.md) control using Arduino. PID control is a widely used technique in control systems for achieving precise and accurate control of a system's output based on desired setpoints.
+This repository contains example projects demonstrating the implementation of [PID (Proportional-Integral-Derivative)](explanations/what_is_pid.md) control using Arduino. PID control is a widely used technique in control systems for achieving precise and accurate control of a system's output based on desired setpoints.
 
 ## Projects
 
@@ -69,4 +69,3 @@ You can support me by buy me a coffee if u like to.
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 42px !important;width: 151.9px !important; margin-top: 50px !important;">
   </a>
 </div>
-
